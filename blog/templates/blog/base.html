@@ -8,7 +8,8 @@
         <title>Catherine Stevens Blog</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/sass/styles.min.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Lora|Quicksand" rel="stylesheet">
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
         <!-- Place favicon.ico in the root directory -->
@@ -18,9 +19,29 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
         <!-- blog posts overview page -->
-        <a href="{% url 'post_new' %}" class="top-menu"></a>
-
-        {% block content %}
-        {% endblock %}
+        <div class="container">
+            <header class="inner-header">
+              <div class="topic">
+                <h1>Catherine Stevens</h1>
+                <p>I am a UX Designer at a web agency in Oregon with experience doing web and Umbraco CMS development.</p>
+                <p>This is my blog-in-progress. Click the links below to learn more about me.</p>
+                <ul class="btn-group">
+                  <li class="btn">
+                      <a href="https://csrs.github.io/work.html">Projects</a>
+                  </li>
+                  <li class="btn" role="button">
+                      <a href="https://www.github.com/csrs" target="_blank">Github</a>
+                  </li>
+                  <li class="btn" role="button">
+                      <a href="mailto:stevenscatherine2@gmail.com">Email</a>
+                  </li>
+                </ul>
+              </div>
+            </header>
+            <section class="inner-section--single">
+              {% block content %}
+              {% endblock %}
+            </section>
+        </div>
     </body>
 </html>
